@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from '@/styles/LoginForm.module.sass'
 /* eslint-disable */
-// import styles from '@/styles/LoginForm.module.scss'
 import validator from 'validator'
 // 代替使用者去做聚焦的操作，所以被偵測到SEO會扣分。在新的網站中比較沒有提供這個功能。
 export default function Signin(props) {
