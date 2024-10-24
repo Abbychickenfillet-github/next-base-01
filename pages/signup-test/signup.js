@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styles from '@/styles/LoginForm.module.sass'
 /* eslint-disable */
 import validator from 'validator'
+import isEmail from 'validator/lib/isEmail';
+
 // 代替使用者去做聚焦的操作，所以被偵測到SEO會扣分。在新的網站中比較沒有提供這個功能。
 export default function Signin(props) {
   // 狀態為物件，屬性對應到表單的欄位名稱

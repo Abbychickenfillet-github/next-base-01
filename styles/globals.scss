@@ -2,8 +2,8 @@
 // 變數覆蓋用 (Variable overrides)
 // 全站配色 colors
 $primary: #4e0589;
-$secondary: rgba(44, 226, 31, 0.5);
-$success: #7eb4e6;
+$secondary: rgba(202, 204, 50, 0.5);
+$success: #7ee6d5;
 $danger: #ff4136;
 
 // 按鈕圓角邊 button radius
@@ -42,16 +42,7 @@ body {
     // Emoji fonts
     'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    // h3 font-size: 64px h4 
-    // font-size: 48px 
-    // h5 
-    //     font-size: 24px 
-    // label 
-    // align-self: stretch 
-    // color: white 
-    // font-size: 16px 
-    // font-family: Noto Sans TC Regular 
-    // font-weight: 400 
-    // letter-spacing: 3.20px 
-    // word-wrap: break-word 
+}
+h7{
+  
 }
