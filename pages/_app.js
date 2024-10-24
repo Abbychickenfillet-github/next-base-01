@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import '@/styles/globals.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // 全域(global css)及全站會影響到的css(scss)都只有這裡可以導入
-// 全域(global css)只有這裡可以套用
 // import '@/styles/product-table.css'
 import { AuthProvider } from '@/hooks/use-auth2'
 import { CartProvider } from '@/hooks/use-cart.js'

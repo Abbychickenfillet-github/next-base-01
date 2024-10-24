@@ -5,15 +5,20 @@
   background-size: cover;
   margin-inline: auto;
 }
+.button{
+  background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, purple);
+  background: -o-linear-gradient(left, red, orange, yellow, green, blue, purple); 
+  background: -moz-linear-gradient(left, red, orange, yellow, green, blue, purple); 
+  background: linear-gradient(to right, red, orange, yellow, green, blue, purple); 
+  width: 400px;
+}
+
 .gradient-bg .row{
   // height: 100%;
   padding-top: 80px;
   padding-bottom: 200px;
 }
-.btn-primary {
-  background-color: $primary !important; // 使用自訂 $primary 顏色
-  border-color: $primary !important;
-}
+
 @keyframes gradient-shift {
   0% {
     background: linear-gradient(135deg, #3c007a, #8d70f1, #000);
@@ -47,19 +52,17 @@
   margin-top: 50px;
   margin-inline: 80px;
 }
-.custom-input {
-  min-width: 436px;
-}
+
 .inputs-group{
-    padding: 50px;
-    /* 包住所有inputs標籤的 div class */
+  padding: 50px;
+  /* 包住所有inputs標籤的 div class */
 }
 /* tabs跟inputs要一樣長 */
 .inputs {
   min-width: 400px; 
   color: white; 
   background-color: transparent; 
-  font-size: 24px; 
+  font-size: 16px; 
   font-family: Khula; 
   font-weight: 400; 
   letter-spacing: 4.80px; 
@@ -95,10 +98,6 @@
   width: 1143.17px; height: 630px; transform: rotate(8.61deg); transform-origin: 0 0; background: linear-gradient(270deg, #CF8FFC 0%, #5B35AA 50%, #281C72 100%); box-shadow: 185px 185px 185px; border-radius: 9999px; filter: blur(185px);
   position: fixed;
   bottom:0;
-}
-.welcome, .guru-laptop {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
 }
 @media screen and (min-width: 768px) {
   .blur {

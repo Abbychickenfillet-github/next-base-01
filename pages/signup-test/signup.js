@@ -62,15 +62,7 @@ export default function Signin(props) {
       gender:'',
       agree: '',
     }
-    for (let i = 0; i < inputs.length; i++) {
-      if (
-        inputs[i].nodeName === 'INPUT' &&
-        hasError(newErrors, inputs[i].name)
-      ) {
-        inputs[i].focus()
-        return // 這裡不用break，因為有找到錯誤，直接用return跳出此函式
-      }
-    }
+
 
     // 2.開始做個欄位的表單檢查，如果有錯誤訊息就加到newErrors
     if (!user.name) {
@@ -111,22 +103,22 @@ export default function Signin(props) {
 
       <div className={styles['gradient-bg']}>
         <div className="container">
-          {/* <div className={`${styles.blur} ${styles.white}`}>blur</div> */}
+          {/* <div className={`${styles.blur} text-white`}>blur</div> */}
           <div className="row d-flex justify-content-center align-items-center gx-5">
             <div className={`${styles.left} col-4`}>
-              <h4 className={`${styles.white}`}>
+              <h4 className={`text-white`}>
                 Welcome to
               </h4>
               <br />
-              <h3 className={`${styles.white} ${styles['guru-laptop']}`}>
+              <h3 className={`text-white ${styles['guru-laptop']}`}>
                 GURU Laptop
               </h3>
             </div>
             <div className={`${styles.right} col-sm-12 col-md-4`}>
               <div className={`${styles.tabs} d-flex justify-content-between`}>
-                <h7 className={`${styles.white} ${styles.hover}`}>Log in</h7>
+                <h7 className={`text-white ${styles.hover}`}>Log in</h7>
                 <h7 className={styles.white}>|</h7>
-                <h7 className={`${styles.white} ${styles.hover}`}>Sign up</h7>
+                <h7 className={`text-white ${styles.hover}`}>Sign up</h7>
               </div>
               <div className="justify-content-center align-items-center">
                 <form className="mt-3" onSubmit={handleSubmit}>
@@ -138,7 +130,7 @@ export default function Signin(props) {
                     </label>
                     <input
                       type="email"
-                      className={`${styles['custom-input']} form-control ${styles.inputs}`}
+                      className={`form-control ${styles.inputs}`}
                       name="email"
                       value={user.email}
                       onChange={handleFieldChange}
@@ -147,14 +139,14 @@ export default function Signin(props) {
                     <span className="error">{errors.pwd}</span>
                     <label
                       htmlFor="pwd"
-                      className={`form-label ${styles.white} ${styles['custom-label']} mt-3`}
+                      className={`form-label text-white ${styles['custom-label']} mt-3`}
                     >
                       密碼
                     </label>
                     <input
                       name="pwd"
                       id="inputPassword"
-                      className={`form-control ${styles['custom-input']} ${styles.inputs}`}
+                      className={`form-control ${styles.inputs}`}
                       type={showPwd ? 'text' : 'password'}
                       minLength={6}
                       maxLength={12}
@@ -164,18 +156,20 @@ export default function Signin(props) {
                     <input
                       type="checkbox"
                       checked={showPwd}
-                      onChange={() => setShowPwd(!showPwd)} // 修正這裡
+                      onChange={() => setShowPwd(!showPwd)}
+                      // 修正這裡
                     />{' '}
-                    <p className={styles.white}>顯示密碼1</p>
+                    <p className={`${styles.white} d-inline-block`}>顯示密碼1</p>
+                    <br />
                     <span className="error">{errors.confirmPwd}</span>
                     <label
-                      className={`form-label ${styles.white} ${styles['custom-label']} mt-3`}
+                      className={`form-label text-white ${styles['custom-label']} mt-3`}
                       htmlFor="ConfirmPwd"
                     >
                       重新輸入密碼:{'顯示密碼'}
                     </label>
                     <input
-                      className={`form-control ${styles['custom-input']} ${styles.inputs}`}
+                      className={`form-control ${styles.inputs}`}
                       type={showConfirmPwd ? 'text' : 'password'}
                       name="ConfirmPwd"
                       value={user.confirmPwd}
@@ -188,32 +182,32 @@ export default function Signin(props) {
                         setShowConfirmPwd(!showConfirmPwd)
                       }}
                     />{' '}
-                    <p className={styles.white}>顯示密碼2</p>
-
+                    <p className={`${styles.white} d-inline`}>顯示密碼2</p>
+                      <br />
                     <label
-                      className={`form-label ${styles.white} ${styles['custom-label']} mt-3`}
+                      className={`form-label text-white ${styles['custom-label']} mt-3`}
                       htmlFor="phone"
                     >
                       手機
                     </label>
                     <input
-                      className={`form-control ${styles['custom-input']} ${styles.inputs}`}
+                      className={`form-control ${styles.inputs}`}
                       type="text"
                       name="phone"
                     />
                     <label
-                      className={`form-label ${styles.white} ${styles['custom-label']} mt-3`}
+                      className={`form-label text-white ${styles['custom-label']} mt-3`}
                       htmlFor="birthDate"
                     >
                       生日
                     </label>
                     <input
-                      className={`form-control ${styles['custom-input']} ${styles.inputs}`}
+                      className={`form-control ${styles.inputs}`}
                       type="date"
                       name="birthDate"
                     />
                     <label
-                      className={`form-label ${styles.white} ${styles['custom-label']} mt-3`}
+                      className={`form-label text-white ${styles['custom-label']} mt-3`}
                       htmlFor="gender"
                     >
                       性別
@@ -221,7 +215,7 @@ export default function Signin(props) {
                     <br />
                     <select
                       name="gender"
-                      className={`${styles['custom-input']} ${styles.inputs}`}
+                      className={`${styles.inputs}`}
                     >
                       <option value="女" selected>
                         請選擇
@@ -231,16 +225,18 @@ export default function Signin(props) {
                       <option value="不透漏">不透漏</option>
                       <option value="+LGBTQ">+LGBTQ</option>
                     </select>
+                    <br />
                     <input
                       type="checkbox"
                       name="agree"
                       checked={user.agree}
                       onChange={handleFieldChange}
-                    />{' '}
-                    <p className={styles.white}>我同意網站會員註冊條款</p>
+                    />
+             <p className={`text-white d-inline-block`}>我同意網站會員註冊條款</p>
+
                     <span className="error">{errors.agree}</span>
                     <br />
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className={styles.button}>
                       送出
                     </button>
                   </div>
