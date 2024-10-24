@@ -1,7 +1,7 @@
 // 檔案位置: styles/global.scss
 // 變數覆蓋用 (Variable overrides)
 // 全站配色 colors
-$primary: #4e0589;
+$primary: #883dc5;
 $secondary: rgba(202, 204, 50, 0.5);
 $success: #7ee6d5;
 $danger: #ff4136;
@@ -21,6 +21,10 @@ $border-radius-lg: 0.2em;
 
 // 定義中文字體用
 body {
+  margin: 0;
+  padding: 0;
+  /* height: 100%; */
+  overflow-x: hidden;
   font-family: 'Noto Sans TC Regular', Helvetica, Arial, 'PingFang TC',
     '苹方-繁', 'Heiti TC', '黑體-繁', 'Microsoft JhengHei', '微軟正黑體',
     // Cross-platform generic font family (default user interface font)
@@ -43,6 +47,39 @@ body {
     'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+h1{
+  font-size:100px;
+}
+h2{
+  font-size: 96px;
+}
+h3 {
+  font-size: 64px;
+}
+h4 {
+  font-size: 48px;
+}
+h5 {
+  font-size: 36px;
+}
+h6{
+  font-size:30px
+}
 h7{
-  
+  font-size: 24px;
+}
+h8{
+  font-size: 20px;
+}
+h9{
+  font-size: 16px;
+}
+h10{
+  font-size: 14px;
+}
+h11{
+  font-size: 10px;
+}
+.white {
+  color: white;
 }
