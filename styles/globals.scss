@@ -1,19 +1,20 @@
 // 檔案位置: styles/global.scss
 // 變數覆蓋用 (Variable overrides)
 // 全站配色 colors
+
 $primary: #883dc5;
 $secondary: rgba(202, 204, 50, 0.5);
 $success: #7ee6d5;
 $danger: #ff4136;
 
 // 按鈕圓角邊 button radius
-$border-radius: 0em;
-$border-radius-sm: 1rem;
-$border-radius-lg: 0.2em;
+$border-radius: 1em;
+$border-radius-sm: 2rem;
+$border-radius-lg: 2.2em;
 
 // ↑↑↑  變數覆蓋(Variable overrides) 要寫在這行"上面"  ↑↑↑
 // 導入所有 bootstrap 樣式
-// @import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap';
 // ↓↓↓  其它客製樣式要寫在這行的"下面" ↓↓↓
 
 // google Noto Sans TC 字體

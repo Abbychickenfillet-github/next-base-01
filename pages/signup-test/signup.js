@@ -4,6 +4,7 @@ import styles from '@/styles/signUpForm.module.scss'
 /* eslint-disable */
 import validator from 'validator'
 import isEmail from 'validator/lib/isEmail'
+import Link from 'next/link'
 
 // 代替使用者去做聚焦的操作，所以被偵測到SEO會扣分。在新的網站中比較沒有提供這個功能。
 export default function Signin(props) {
@@ -14,7 +15,7 @@ export default function Signin(props) {
     username: '',
     pwd: '',
     ConfirmPwd: '',
-    phone:'',
+    phone: '',
     gender: '',
     agree: false, // checkbox 同意會員註冊條款
   })
@@ -25,8 +26,8 @@ export default function Signin(props) {
     username: '',
     pwd: '',
     confirmPwd: '',
-    phone:'',
-    gender:'',
+    phone: '',
+    gender: '',
     agree: '', // 錯誤訊息用字串
   })
 
@@ -58,11 +59,10 @@ export default function Signin(props) {
       username: '',
       pwd: '',
       confirmPwd: '',
-      phone:'',
-      gender:'',
+      phone: '',
+      gender: '',
       agree: '',
     }
-
 
     // 2.開始做個欄位的表單檢查，如果有錯誤訊息就加到newErrors
     if (!user.name) {
@@ -100,33 +100,34 @@ export default function Signin(props) {
 
   return (
     <>
-
       <div className={styles['gradient-bg']}>
         <div className="container">
           {/* <div className={`${styles.blur} text-white`}>blur</div> */}
           <div className="row d-flex justify-content-center align-items-center gx-5">
             <div className={`${styles.left} col-4`}>
-              <h4 className={`text-white`}>
-                Welcome to
-              </h4>
+              <h4 className={`text-white ${styles.welcome}`}>Welcome to</h4>
               <br />
               <h3 className={`text-white ${styles['guru-laptop']}`}>
                 GURU Laptop
               </h3>
             </div>
             <div className={`${styles.right} col-sm-12 col-md-4`}>
+
               <div className={`${styles.tabs} d-flex justify-content-between`}>
-                <h7 className={`text-white ${styles.hover}`}>Log in</h7>
-                <h7 className={styles.white}>|</h7>
-                <h7 className={`text-white ${styles.hover}`}>Sign up</h7>
-              </div>
+              <h7 className={`${styles.white} ${styles.hover}`}>
+                <Link href="/signup-test/login">Log in</Link>
+              </h7>
+              <h5 className={styles.white}>|</h5>
+              <h5 className={`${styles.white} ${styles.hover}`}>
+                <Link href="/signup-test/signup">Sign up</Link>
+              </h5>
+            </div>
               <div className="justify-content-center align-items-center">
                 <form className="mt-3" onSubmit={handleSubmit}>
                   <div className={styles['inputs-group']}>
                     <span className="error">{errors.email}</span>
                     <label htmlFor="email" className={styles.white}>
-                    <h9> 帳號(信箱)</h9>
-                     
+                      <h9> 帳號(信箱)</h9>
                     </label>
                     <input
                       type="email"
@@ -136,7 +137,8 @@ export default function Signin(props) {
                       onChange={handleFieldChange}
                       autofocus
                     />
-                    <span className="error">{errors.pwd}</span>
+                    {"  "}
+                    <span className="error">{errors.pwd}</span>{"        "}
                     <label
                       htmlFor="pwd"
                       className={`form-label text-white ${styles['custom-label']} mt-3`}
@@ -159,7 +161,9 @@ export default function Signin(props) {
                       onChange={() => setShowPwd(!showPwd)}
                       // 修正這裡
                     />{' '}
-                    <p className={`${styles.white} d-inline-block`}>顯示密碼1</p>
+                    <p className={`${styles.white} d-inline-block`}>
+                      顯示密碼1
+                    </p>
                     <br />
                     <span className="error">{errors.confirmPwd}</span>
                     <label
@@ -183,7 +187,7 @@ export default function Signin(props) {
                       }}
                     />{' '}
                     <p className={`${styles.white} d-inline`}>顯示密碼2</p>
-                      <br />
+                    <br />
                     <label
                       className={`form-label text-white ${styles['custom-label']} mt-3`}
                       htmlFor="phone"
@@ -213,10 +217,7 @@ export default function Signin(props) {
                       性別
                     </label>
                     <br />
-                    <select
-                      name="gender"
-                      className={`${styles.inputs}`}
-                    >
+                    <select name="gender" className={`${styles.inputs}`}>
                       <option value="女" selected>
                         請選擇
                       </option>
@@ -232,11 +233,12 @@ export default function Signin(props) {
                       checked={user.agree}
                       onChange={handleFieldChange}
                     />
-             <p className={`text-white d-inline-block`}>我同意網站會員註冊條款</p>
-
+                    <p className={`text-white d-inline-block`}>
+                      我同意網站會員註冊條款
+                    </p>
                     <span className="error">{errors.agree}</span>
                     <br />
-                    <button type="submit" className={styles.button}>
+                    <button type="submit" className="btn btn-primary">
                       送出
                     </button>
                   </div>
@@ -250,9 +252,10 @@ export default function Signin(props) {
       <style jsx>
         {`
           .error {
-            color: yellow;
-            font-size: 12px;
+            color: red;
+            font-size: 16px;
             height: 16px;
+            letter-spacing: 3.2px;
           }
         `}
       </style>

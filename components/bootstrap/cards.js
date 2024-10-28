@@ -1,7 +1,6 @@
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 
-function BasicExample() {
+export default function CardExample() {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
@@ -16,5 +15,3 @@ function BasicExample() {
     </Card>
   );
 }
-
-export default BasicExample;

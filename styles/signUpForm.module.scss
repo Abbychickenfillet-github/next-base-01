@@ -10,8 +10,22 @@
   // height: 100%;
   padding-top: 80px;
   padding-bottom: 200px;
+  position: relative; /* 添加這一行以固定blur */
 }
-
+.blur {
+  /* background: rgba(255, 255, 255, 0.626);*/
+  /* width: 400px; 固定寬度 */
+  /* height: 400px; 固定高度 */
+  /* border-radius: 45%; 圓形 */
+  /* box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.5); 光暈效果 */
+  /* filter: blur(10px); 模糊效果 */
+  /* position: fixed; */
+  /* bottom: 0; */ 
+  /* CF8FFC 5B35AA 281C72 */
+  width: 1143.17px; height: 630px; transform: rotate(8.61deg); transform-origin: 0 0; background: linear-gradient(270deg, #ce8ffcda 0%, rgba(90, 53, 170, 0.548) 50%, #271c7280 100%); box-shadow: 185px 185px 185px; border-radius: 999px; filter: blur(185px);
+  position: absolute;
+  left: 20px;
+}
 @keyframes gradient-shift {
   0% {
     background: linear-gradient(135deg, #3c007a, #8d70f1, #000);
@@ -28,7 +42,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .left {
-  position: relative;
+  // position: relative;
   z-index: 1;  /* 確保在其他元素上方 */
   min-width: 200px;  /* 給予最小寬度 */
   padding: 20px;    /* 給予一些內邊距 */
@@ -59,7 +73,7 @@
   font-size: 16px; 
   font-family: Khula; 
   font-weight: 400; 
-  letter-spacing: 4.80px; 
+  letter-spacing: 3.20px; 
   word-wrap: break-word; 
   border-radius: 10px;
 padding-left: 23px; padding-right: 23px; padding-top: 17px; padding-bottom: 17px; background: rgba(30, 25, 55, 0.30); border-radius: 10px; overflow: hidden; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex
@@ -80,20 +94,7 @@ padding-left: 23px; padding-right: 23px; padding-top: 17px; padding-bottom: 17px
     color: #8d70f1;
   }
 }
-.blur {
-  /* background: rgba(255, 255, 255, 0.626);*/
-  /* width: 400px; 固定寬度 */
-  /* height: 400px; 固定高度 */
-  /* border-radius: 45%; 圓形 */
-  /* box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.5); 光暈效果 */
-  /* filter: blur(10px); 模糊效果 */
-  /* position: fixed; */
-  /* bottom: 0; */ 
-  /* CF8FFC 5B35AA 281C72 */
-  width: 1143.17px; height: 630px; transform: rotate(8.61deg); transform-origin: 0 0; background: linear-gradient(270deg, #CF8FFC 0%, #5B35AA 50%, #281C72 100%); box-shadow: 185px 185px 185px; border-radius: 9999px; filter: blur(185px);
-  position: fixed;
-  bottom:0;
-}
+
 @media screen and (min-width: 768px) {
   .blur {
     width: 45%;
@@ -104,7 +105,22 @@ padding-left: 23px; padding-right: 23px; padding-top: 17px; padding-bottom: 17px
       width: 10/12;
       position: relative;
   }
+  .left{
+    // position: absolute;
+  }
 }
+@media screen and (max-width: 768px) {
+  .right {
+    order: 2; /* 手機上放到下面 */
+    width: 100%; /* 確保寬度為100% */
+  }
+
+  .left {
+    order: 1; /* 手機上放到上面 */
+    width: 100%; /* 確保寬度為100% */
+  }
+}
+
 @media screen and (max-width: 414px){
   .right{
       position: relative;
@@ -120,10 +136,21 @@ padding-left: 23px; padding-right: 23px; padding-top: 17px; padding-bottom: 17px
   }
 }
 .button{
-  background: -webkit-linear-gradient(360deg, #A793E9 0%, #5346B6 50%, #34246D 100%);
+  background: -webkit-linear-gradient(360deg, #A793E9 0%, #5346B6 50%, #34246d8e 100%);
   background: -o-linear-gradient(360deg, #A793E9 0%, #5346B6 50%, #34246D 100%);
   background: -moz-linear-gradient(360deg, #A793E9 0%, #5346B6 50%, #34246D 100%);
   background: linear-gradient(360deg, #A793E9 0%, #5346B6 50%, #34246D 100%);
   width: 100%;
   border-radius: 20px;
+}
+.welcome{
+  letter-spacing: 9.6px;
+  word-wrap: break-word;
+  color: white; font-size: 48px; font-family: Khula;
+}
+.guru-laptop{
+  font-size: 64px; font-family: Khula; font-weight: 400; letter-spacing: 12.80px; 
+}
+.custom-label{
+  letter-spacing: 4px;
 }

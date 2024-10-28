@@ -22,6 +22,7 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+
   // output: 'export', // don't use with `next start` or api route
   // distDir: 'dist',
   // avoid cors with proxy
