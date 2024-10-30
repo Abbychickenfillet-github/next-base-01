@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LeftAside from '@/components/dashboard/leftAside'; // 假設 LeftAside 也是一部分
-import styles from '@/styles/dashboard.module.scss'; // 引入你自己的樣式
+
 
 export default function UserProfile() {
   const [user, setUser] = useState({

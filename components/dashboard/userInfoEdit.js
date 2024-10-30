@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LeftAside from '@/components/dashboard/leftAside'; // 假設 LeftAside 也是一部分
-import styles from '@/styles/dashboard.module.scss'; // 引入你自己的樣式
 import AddressCompo from '@/components/dashboard/test-address'
 
 export default function UserProfile() {
