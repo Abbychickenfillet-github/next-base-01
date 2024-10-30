@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState, useEffect } from 'react'
 import { Tabs, Tab } from 'react-bootstrap'
 import styles from '@/styles/dashboard.module.scss' // 假設你有一個樣式檔案
 import FileManagementTable from '@/components/dashboard/userInfoEdit'
@@ -29,7 +29,7 @@ export default function FillExample() {
             </div>
           </Tab>
           <Tab eventKey="lease-record" title="租賃清單">
-            <div>
+            <div className='col-6'>
               <h4>Link Tab Content</h4>
               <p>這裡是另一個連結對應的內容。</p>
             </div>
